@@ -14,7 +14,7 @@
                 <h1>Avalon todo</h1>
             </div>
             <div class="content">
-                <input type="text" id="new" class="inp" placeholder="type some thing u wanna to do..." />
+                <input type="text" id="new" class="inp" placeholder="type some thing u wanna to do..." autofocus ms-keypress="newOne" />
 
                 <ul class="todo-list">
                      <li ms-repeat="things" class="todo-item">
@@ -28,10 +28,11 @@
                          </div>
                      </li>
                 </ul>
+
             </div>
             <div class="foot">
                 <span class="lefts">
-                    2 left
+                    总共 {{things.length}} 件, 还剩 {{lefts}} 件未做.
                 </span>
                 <a href="javascript:;" class="clear-all">清除所有</a>
             </div>
