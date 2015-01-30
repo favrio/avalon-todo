@@ -33,6 +33,9 @@ var app = avalon.define("todoCtrl", function(vm) {
 			update();
 		}
 	};
+	vm.clear = function() {
+		vm.things = [];
+	}
 });
 
 app.$watch("things", function(value, oldValue){
