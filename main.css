@@ -68,3 +68,6 @@ li {
 	padding: 10px 20px;
 	background: #F4FCE8;
 }
+.clear-all {
+	float: right;
+}

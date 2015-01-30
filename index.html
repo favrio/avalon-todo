@@ -4,10 +4,12 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>AVALON - todo</title>
     <link rel="stylesheet" href="main.css" />
+    <script src="lib/avalon.js"></script>
+    <script src="scripts/app.js"></script>
 </head>
 <body>
     <div id="wrap">
-        <div id="todo">
+        <div id="todo" ms-controller="todoCtrl">
             <div class="head">
                 <h1>Avalon todo</h1>
             </div>
@@ -15,11 +17,11 @@
                 <input type="text" id="new" class="inp" placeholder="type some thing u wanna to do..." />
 
                 <ul class="todo-list">
-                     <li class="todo-item">
+                     <li ms-repeat="things" class="todo-item">
                          <div class="normal">
-                             <input type="checkbox" />
-                             <span>我今天要好好学习，天天吃饭。</span>
-                             <a href="javascript:;" class="item-del">删除</a>
+                             <input type="checkbox" ms-duplex-checked="el.done" />
+                             <span>{{el.content}}</span>
+                             <a href="javascript:;" class="item-del" ms-click="$remove">删除</a>
                          </div>
                          <div class="edit">
                              <input type="text" class="inp" />
@@ -31,6 +33,7 @@
                 <span class="lefts">
                     2 left
                 </span>
+                <a href="javascript:;" class="clear-all">清除所有</a>
             </div>
         </div>
     </div>
