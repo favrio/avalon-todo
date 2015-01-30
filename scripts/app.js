@@ -35,4 +35,7 @@ var app = avalon.define("todoCtrl", function(vm) {
 	};
 });
 
-
+app.$watch("things", function(value, oldValue){
+	alert("in watch");
+	console.log(value, oldValue);
+});
