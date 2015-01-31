@@ -37,7 +37,11 @@ var app = avalon.define("todoCtrl", function(vm) {
 		vm.things = [];
 	}
 	vm.edit = function(index) {
+		var that = this;
 		vm.editIndex = index;
+		setTimeout(function() {
+			that.querySelector(".inp").select();
+		});
 	}
 	vm.editBlur = function() {
 		console.log("input blur");
