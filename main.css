@@ -1,0 +1,80 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #EEEEEE;
+	font-family: "Microsoft Yahei";
+	font-size: 12px;
+}
+li {
+	list-style: none;
+}
+#todo {
+	width: 520px;
+	background: #FFF;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -150px 0 100px -260px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.inp {
+	width: 466px;
+	font-size: 24px;
+	line-height: 1.4em;
+	outline: none;
+	padding: 6px;
+	margin: 0 auto;
+	border: 1px solid #999999;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+}
+.head h1 {
+	font-size: 36px;
+	font-weight: 400;
+	text-align: center;
+	padding: 10px;
+}
+.content {
+	padding: 20px;
+}
+.todo-list {
+	margin-top: 10px;
+}
+.todo-item {
+	position: relative;
+	line-height: 40px;
+	font-size: 18px;
+	border-bottom: 1px solid #cccccc;
+}
+.edit {
+	display: none;
+}
+.item-del {
+	display: none;
+	position: absolute;
+	top: 10px;
+	right: 0;
+	background: url(images/destroy.png) no-repeat 50% 50%;
+	width: 20px;
+	height: 20px;
+	text-indent: -9999px;
+}
+.todo-item:hover .item-del {
+	display: block;
+}
+.foot {
+	padding: 10px 20px;
+	background: #F4FCE8;
+}
+.clear-all {
+	float: right;
+}
+.editable .normal {
+	display: none;
+}
+.editable .edit {
+	display: block;
+}
