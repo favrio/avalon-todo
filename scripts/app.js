@@ -6,21 +6,21 @@ var app = avalon.define("todoCtrl", function(vm) {
 		done: true,
 		content: "这几天学学AVALON。"
 	}];
-
+	vm.editIndex = -1;
+	console.log(vm.things);
 	// 计算未完成数量
 	vm.getLefts = function() {
 		return vm.things.filter(function(post) {
-			return post.done === true;
+			return post.done !== true;
 		}).length;
 	};
 
 	// 更新未完成数量
-	function update() {
+	vm.update = function() {
 		vm.lefts = vm.getLefts();
-		console.log(vm.getLefts());
 	};
 
-	update();
+	vm.update();
 
 	vm.newOne = function(e) {
 		if (e.which === 13 && this.value) {
@@ -30,15 +30,17 @@ var app = avalon.define("todoCtrl", function(vm) {
 			};
 			vm.things.push(item);
 			this.value = "";
-			update();
+			vm.update();
 		}
 	};
 	vm.clear = function() {
 		vm.things = [];
 	}
-});
-
-app.$watch("things", function(value, oldValue){
-	alert("in watch");
-	console.log(value, oldValue);
+	vm.edit = function(index) {
+		vm.editIndex = index;
+	}
+	vm.editBlur = function() {
+		console.log("input blur");
+		vm.editIndex = -1;
+	}
 });

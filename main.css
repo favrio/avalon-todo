@@ -71,3 +71,9 @@ li {
 .clear-all {
 	float: right;
 }
+.editable .normal {
+	display: none;
+}
+.editable .edit {
+	display: block;
+}
