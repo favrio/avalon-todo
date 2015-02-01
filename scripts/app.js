@@ -6,8 +6,8 @@ var app = avalon.define("todoCtrl", function(vm) {
 		done: true,
 		content: "这几天学学AVALON。"
 	}];
-	vm.editIndex = -1;
-	console.log(vm.things);
+	vm.editIndex = null;
+
 	// 计算未完成数量
 	vm.getLefts = function() {
 		return vm.things.filter(function(post) {
@@ -15,7 +15,7 @@ var app = avalon.define("todoCtrl", function(vm) {
 		}).length;
 	};
 
-	// 更新未完成数量
+	// 更新
 	vm.update = function() {
 		vm.lefts = vm.getLefts();
 	};
@@ -26,8 +26,12 @@ var app = avalon.define("todoCtrl", function(vm) {
 		if (e.which === 13 && this.value) {
 			var item = {
 				done: false,
-				content: this.value
+				content: this.value.trim()
 			};
+			if(item.content === "") {
+				alert("不能为空");
+				return false;
+			}
 			vm.things.push(item);
 			this.value = "";
 			vm.update();
@@ -42,6 +46,10 @@ var app = avalon.define("todoCtrl", function(vm) {
 		setTimeout(function() {
 			that.querySelector(".inp").select();
 		});
+	}
+	vm.del = function($remove) {
+		$remove();
+		vm.update();
 	}
 	vm.editBlur = function() {
 		console.log("input blur");
