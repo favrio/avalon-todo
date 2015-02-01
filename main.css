@@ -13,10 +13,7 @@ li {
 #todo {
 	width: 520px;
 	background: #FFF;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin: -150px 0 100px -260px;
+	margin: 200px auto 100px auto;
 	box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
 	border-radius: 5px;
 	overflow: hidden;
@@ -32,6 +29,8 @@ li {
 	box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
 }
 .head h1 {
+	background: #E09F9F;
+	color: #FFF;
 	font-size: 36px;
 	font-weight: 400;
 	text-align: center;
@@ -39,6 +38,7 @@ li {
 }
 .content {
 	padding: 20px;
+	background: url(images/ripple.png) repeat-x;
 }
 .todo-list {
 	margin-top: 10px;
@@ -77,4 +77,8 @@ li {
 }
 .editable .edit {
 	display: block;
+}
+.done .normal {
+	color: #e3e3e3;
+	text-decoration: line-through;
 }

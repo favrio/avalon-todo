@@ -17,7 +17,7 @@
                 <input type="text" id="new" class="inp" placeholder="type some thing u wanna to do..." autofocus ms-keypress="newOne" />
 
                 <ul class="todo-list">
-                     <li ms-repeat="things" class="todo-item" ms-class-editable="editIndex === $index" ms-dblclick="edit($index)">
+                     <li ms-repeat="things" class="todo-item" ms-class-done="el.done" ms-class-editable="editIndex === $index" ms-dblclick="edit($index)">
                          <div class="normal">
                              <input type="checkbox" ms-duplex-checked="el.done" data-duplex-changed="update" />
                              <span>{{el.content}}</span>
