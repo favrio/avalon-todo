@@ -10,6 +10,9 @@ body {
 li {
 	list-style: none;
 }
+a {
+	color: #C47272;
+}
 #todo {
 	width: 520px;
 	background: #FFF;
